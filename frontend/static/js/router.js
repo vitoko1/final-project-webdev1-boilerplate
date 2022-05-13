@@ -1,6 +1,7 @@
 import Homepage from './views/Homepage.js';
 import CountryView from './views/CountryView.js';
 import Countries from './views/Countries.js';
+import {getCountries} from './countries.js'
 
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -41,6 +42,22 @@ const router = async () => {
 
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
+    const countries = getCountries();
+    console.log("countries",countries);
+    const params = getParams(match)
+
+    if(match.route.path === "/countries/:id"){
+        let found = false;
+        for(let country of countries){
+            if(country.car.cca3 === params.id){
+                 console.log("condition",country.car.cca3 === params[1])
+                found = true;
+             } 
+        }
+        console.log('found', found);
+        !found && (match = {route: routes[0], result:[location.pathname]})
+    }
+    
     if(!match) {
         match = {
             route: routes[0],
@@ -48,11 +65,9 @@ const router = async () => {
         }
     }
 
-    const view = new match.route.view(getParams(match));
+    const view = new match.route.view(params);
 
     document.querySelector("#app").innerHTML = await view.getHTML();
-
-    // console.log(match.route.view());
 
 }
 
