@@ -43,14 +43,14 @@ const router = async () => {
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
     const countries = getCountries();
-    console.log("countries",countries);
     const params = getParams(match)
 
     if(match.route.path === "/countries/:id"){
         let found = false;
         for(let country of countries){
-            if(country.car.cca3 === params.id){
-                 console.log("condition",country.car.cca3 === params[1])
+            const cca3 = country.cca3.toLowerCase();
+            const paramsId = params.id.toLowerCase(); 
+            if(cca3 === paramsId){
                 found = true;
              } 
         }
