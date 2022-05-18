@@ -1,5 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cookie&family=Courgette&family=Montserrat:wght@100&family=Nunito+Sans:wght@200&display=swap");
 * {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background: url(../css/images/backgroundImage.jpeg) no-repeat bottom center;
+  background-size: cover;
+}
+
+.header {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #8D9DA8;
+  border-bottom: 1px solid #8D9DA8;
+}
+.header .navbar {
+  list-style: none;
+  text-decoration: none;
+  margin: 1rem 0;
+}
+.header .navbar .nav_link {
+  display: inline-block;
+  padding: 0px 20px;
+  transition: all 0.3s ease 0s;
+}
+.header .navbar .nav_link:hover {
+  color: cadetblue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10vw;
+}
+.container h3 {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+* {
   padding: 0px;
   margin: 0px;
   font-family: "Nunito Sans";
