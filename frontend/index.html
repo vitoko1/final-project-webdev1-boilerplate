@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fda1a9aa30.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="/" class="nav__link" data-link>Home</a>
-            <a href="/countries" class="nav__link" data-link>Countries</a>
+            <ul>
+                <li class="nav_link">
+                    <a href="/" class="nav_link" data-link>Home</a>
+                </li>
+                <li class="nav_link">
+                    <a href="/countries" class="nav_link" data-link>Countries</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <div class="container">
         <h3>Where do you wanna travel?</h3>
-        <input type="text" name="" placeholder="Search Your Destination">
-        <a class="search-btn" href="#"></a>
+        <div class="search-box">
+            <i class="fa-solid fa-book-atlas"></i>
+            <input class="search-txt" type="text" name="" placeholder="Search Your Destination">
+            <a class="search-btn" href="#"></a>
+        </div>
     </div>
     <div id="app"></div>
     <script type="module" src="/static/js/countries.js"></script>
