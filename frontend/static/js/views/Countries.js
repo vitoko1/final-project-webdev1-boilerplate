@@ -5,6 +5,7 @@ import { getCountriesResume } from '../countries.js';
 
 const countries = getCountries();
 const countriesResumeArray = getCountriesResume();
+const btnFilter = document.getElementById("filterButton")
 export default class extends AbstractView {
     constructor(params) {
         super(params);
@@ -37,6 +38,12 @@ export default class extends AbstractView {
 
 }
 
+
+
+
+
+
+
 const createFilterSection = function () {
 
 
@@ -49,6 +56,8 @@ const createFilterSection = function () {
     divInFlex.className = 'in-flex';
 
     let newInput = document.createElement('input');
+
+    newInput.id = 'inputId';
 
     newInput.className = 'text';
     newInput.label = 'label';
@@ -176,6 +185,28 @@ const createFlags = function () {
     return blancDiv;
 
 }
+
+
+
+
+window.onload = function () {
+
+    document.getElementById("filterButton").addEventListener("click", getInfo);
+}
+
+function getInfo() {
+    let getInput = document.getElementById("inputId");
+    let values = getInput.value;
+
+
+    let getSelectValues = document.getElementById("filterSelect");
+    //alert(getSelectValues);
+    let valueSelect = getSelectValues.options[getSelectValues.selectedIndex].value;
+    //alert(valueSelect);
+
+}
+
+
 
 
 
