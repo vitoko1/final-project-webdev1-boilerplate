@@ -24,7 +24,7 @@ export default class extends AbstractView {
 
         let aux2 = document.getElementById('containerHomePage');
 
-                if (null != aux2) {
+        if (null != aux2) {
 
             document.getElementById('containerHomePage').remove();
         }
