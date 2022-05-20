@@ -42,8 +42,6 @@ export default class extends AbstractView {
 
 
 
-
-
 const createFilterSection = function () {
 
 
@@ -95,7 +93,7 @@ const createFilterSection = function () {
 
     // let blancDiv = document.createElement('div');
 
-    let blancDiv = createFlags();
+    let blancDiv = createFlags(countriesResumeArray);
     // let divFlags = createFlags();
 
     // blancDiv.appendChild(divFlags);
@@ -115,25 +113,60 @@ const createFilterSection = function () {
 
 }
 
-const filterFunction = function (filterBy, input) {
-    let filteredCountries = [];
 
-    if (filterBy === "name") {
-        filteredCountries = testArray.filter(f => f.countryName === input);
+window.onload = function () {
+    document.getElementById("filterButton").addEventListener("click", filterFunction);
+}
 
-    } else if (filterBy === "region") {
-        filteredCountries = testArray.filter(f => f.region === input);
-    }
+const getInfo = function () {
+    let getInput = document.getElementById("inputId");
+    let valuesInput = getInput.value;
 
-    return filteredCountries;
+    let getFilterBy = document.getElementById("filterSelect");
+    let valuesFilterby = getFilterBy.options[getFilterBy.selectedIndex].value;
 }
 
 
-const createFlags = function () {
+const filterFunction = function (filterBy, input) {
+    let filteredCountries = [];
+
+    let getInput = document.getElementById("inputId");
+    input = getInput.value;
+
+    let getFilterBy = document.getElementById("filterSelect");
+    filterBy = getFilterBy.options[getFilterBy.selectedIndex].value;
+    alert(filterBy);
+
+    let testArray;
+
+
+    if (filterBy === "name") {
+        filteredCountries = countriesResumeArray.filter(f => f.countryName === input);
+
+    } else if (filterBy === "region") {
+        filteredCountries = countriesResumeArray.filter(f => f.region === input);
+    }
+
+    //elimnar div body
+    let idDivToBody = document.getElementById("div-to-body");
+    idDivToBody.remove();
+    // pintar nuevas banderas filtradas
+    let blancDiv = createFlags(filteredCountries);
+    let divToBody = document.createElement('div');
+    divToBody.id = 'div-to-body';
+    divToBody.appendChild(blancDiv);
+    document.body.appendChild(divToBody);
+
+
+}
+
+
+const createFlags = function (countriesArray) { //(countriesArray)
 
     let blancDiv = document.createElement('div');
 
-    countriesResumeArray.forEach(function (country) {
+    //countriesArray.forEach(function (country) {
+    countriesArray.forEach(function (country) {
 
 
 
@@ -182,30 +215,11 @@ const createFlags = function () {
 
 
 
+
+
     return blancDiv;
 
 }
-
-
-
-
-window.onload = function () {
-
-    document.getElementById("filterButton").addEventListener("click", getInfo);
-}
-
-function getInfo() {
-    let getInput = document.getElementById("inputId");
-    let values = getInput.value;
-
-
-    let getSelectValues = document.getElementById("filterSelect");
-    //alert(getSelectValues);
-    let valueSelect = getSelectValues.options[getSelectValues.selectedIndex].value;
-    //alert(valueSelect);
-
-}
-
 
 
 
