@@ -31,7 +31,7 @@ export default class extends AbstractView {
         }
 
         createFilterSection();
-        return "<h1>Countries</h1>";
+        return "";
 
     }
 
