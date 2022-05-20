@@ -145,6 +145,7 @@ const createFlags = function () {
         let countryRegion = country.region;
         let countryCapital = country.capital;
         let countryName = country.countryName;
+        let countryId = country.idCountry;
 
 
 
@@ -155,8 +156,13 @@ const createFlags = function () {
 
 
         let h1Title = document.createElement('h1');
-        h1Title.textContent = countryName;
+        //h1Title.textContent = countryName; 
 
+        let aName = document.createElement('a');
+        aName.href= 'countries/'+countryId;
+        aName.textContent=countryName;
+
+        h1Title.appendChild(aName);
         let pPopulation = document.createElement('p');
         pPopulation.textContent = 'Population: ' + countryPopulation;
 
