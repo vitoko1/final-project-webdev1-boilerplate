@@ -21,7 +21,14 @@ export default class extends AbstractView {
 
             document.getElementById('div-to-body').remove();
         }
-        
+
+        let aux2 = document.getElementById('containerHomePage');
+
+                if (null != aux2) {
+
+            document.getElementById('containerHomePage').remove();
+        }
+
         createFilterSection();
         return "<h1>Countries</h1>";
 
