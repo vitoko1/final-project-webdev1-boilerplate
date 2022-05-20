@@ -1,26 +1,37 @@
 import AbstractView from "./AbstractView.js";
 
-export default class extends AbstractView{
+export default class extends AbstractView {
     constructor(params) {
         super(params);
         this.setTitle("Homepage");
     }
 
     async getHTML() {
-        createHomeSection();
+
 
         let aux2 = document.getElementById('containerHomePage');
 
         if (null != aux2) {
 
-        document.getElementById('containerHomePage').remove();
+            document.getElementById('containerHomePage').remove();
         }
-        
+
+        let aux = document.getElementById('div-to-body');
+
+        if (null != aux) {
+
+            document.getElementById('div-to-body').remove();
+        }
+
+        createHomeSection();
+
+
+
         return "<h1>Homepage</h1>";
     }
 }
 
-const createHomeSection = function(){
+const createHomeSection = function () {
 
     let divInFlex = document.createElement('div');
     divInFlex.className = 'container';
