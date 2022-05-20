@@ -67,8 +67,9 @@ const deployCountryInfo = function () {
 
     let ilListLanguage = document.createElement('il');
     ilListLanguage.className = 'details-item';
-    ilListLanguage.textContent = 'Languages : '+ countrySelected.languages;
-
+    
+    ilListLanguage.textContent = 'Languages : '+  JSON.stringify(countrySelected.languages);
+   
     let ilListCapital = document.createElement('il');
     ilListCapital.className = 'details-item';
     ilListCapital.textContent ='Capital City : '+ countrySelected.capital;
