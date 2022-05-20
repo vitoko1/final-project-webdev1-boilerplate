@@ -44,11 +44,16 @@ const createHomeSection = function () {
 
     let divBtn = document.createElement('div');
     divBtn.className = 'search-box';
+    
+    let aName = document.createElement('a');
+    aName.href= 'countries';
+    aName.textContent='Countries';
 
-    let buttonF = document.createElement('button');
-    buttonF.className = 'search-btn';
-    buttonF.textContent = 'Countries';
-    divBtn.appendChild(buttonF);
+    let h1Title = document.createElement('h1');
+
+    h1Title.appendChild(aName);
+
+    divBtn.appendChild(h1Title);
 
     divInFlex.appendChild(divBtn);
 
