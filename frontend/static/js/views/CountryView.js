@@ -18,7 +18,7 @@ export default class extends AbstractView {
         let divBlanc2 = deployCountryInfo();
         divToBody.appendChild(divBlanc2);
         document.body.appendChild(divToBody);
-        return "<h1>Country </h1>";
+        return "";
 
     }
 
