@@ -14,7 +14,7 @@ export function getCountries() {
 export function getCountriesResume () {
 
     const arrayCountries=getCountries();
-    const newArray = arrayCountries.map(j => ({ countryName: j.name.common, flag : j.flags.svg, population: j.population, region: j.region, capital: j.capital, idCountry: j.cca3, languages: j.languages }));
+    const newArray = arrayCountries.map(j => ({ countryName: j.name.common, flag : j.flags.svg, population: j.population, region: j.region, capital: j.capital, idCountry: j.cca3, languages: j.languages, borders: j.borders }));
     return newArray;
 };
 
