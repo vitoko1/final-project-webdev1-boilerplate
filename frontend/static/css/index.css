@@ -75,6 +75,42 @@ body {
 }
 
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.countries-info .borders .borders-list, .countries-info .borders, .countries-info .details .details-list, .countries-info .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countries-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.countries-info .borders .borders-list .borders-item {
+  text-decoration: none;
+  list-style: none;
+}
+
+.countries-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding: 9px 25px;
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 50px;
+}
+
+* {
   padding: 0px;
   margin: 0px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -110,22 +146,21 @@ body {
 
 .in-flex img {
   margin: 15px;
-  max-width: 140px;
-
+  max-width: 180px;
 }
 
-.flags {
+.flag1 {
   display: inline-block;
   background-color: hsla(256deg, 91%, 27%, 0.13);
 }
 
-.flags p {
+.flag1 p {
   text-align: left;
 }
 
-.flags h1 {
+.flag1 h1 {
   text-align: center;
-
+  margin-top: -30px;
   margin-bottom: 10px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
