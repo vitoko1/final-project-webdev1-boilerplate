@@ -135,7 +135,7 @@ const filterFunction = function (filterBy, input) {
 
     let getFilterBy = document.getElementById("filterSelect");
     filterBy = getFilterBy.options[getFilterBy.selectedIndex].value;
-    alert(filterBy);
+    //alert(filterBy);
 
     let testArray;
 
@@ -154,6 +154,58 @@ const filterFunction = function (filterBy, input) {
     let blancDiv = createFlags(filteredCountries);
     let divToBody = document.createElement('div');
     divToBody.id = 'div-to-body';
+    divToBody.appendChild(blancDiv);
+    document.body.appendChild(divToBody);
+
+    let newELement = document.createElement('section')
+
+    newELement.className = 'home';
+
+    let divInFlex = document.createElement('div');
+
+    divInFlex.className = 'in-flex';
+
+    let newInput = document.createElement('input');
+
+    newInput.id = 'inputId';
+
+    newInput.className = 'text';
+    newInput.label = 'label';
+
+    let newLabel = document.createElement('label');
+
+    newLabel.innerHTML = 'Select Filter:';
+
+    let newSelect = document.createElement('select');
+
+    newSelect.id = 'filterSelect';
+
+    let option1 = document.createElement('option');
+    option1.value = 'region';
+    option1.label = 'Region';
+    let option2 = document.createElement('option');
+    option2.value = 'name';
+    option2.label = 'Name';
+
+    let buttonF = document.createElement('button');
+
+    buttonF.id = 'filterButton';
+    buttonF.textContent = 'Filter';
+
+
+
+    newSelect.appendChild(option1);
+    newSelect.appendChild(option2);
+
+    divInFlex.appendChild(newInput);
+    divInFlex.appendChild(newLabel);
+
+    divInFlex.appendChild(newSelect);
+    divInFlex.appendChild(buttonF);
+
+    newELement.appendChild(divInFlex);
+    divToBody.appendChild(newELement);
+
     divToBody.appendChild(blancDiv);
     document.body.appendChild(divToBody);
 
@@ -192,8 +244,8 @@ const createFlags = function (countriesArray) { //(countriesArray)
         //h1Title.textContent = countryName; 
 
         let aName = document.createElement('a');
-        aName.href= 'countries/'+countryId;
-        aName.textContent=countryName;
+        aName.href = 'countries/' + countryId;
+        aName.textContent = countryName;
 
         h1Title.appendChild(aName);
         let pPopulation = document.createElement('p');
