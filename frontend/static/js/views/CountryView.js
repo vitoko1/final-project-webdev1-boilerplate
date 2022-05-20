@@ -58,7 +58,7 @@ const deployCountryInfo = function () {
 
     let h3CountryName = document.createElement('h3');
 
-    h3CountryName.textContent = 'Country Name '+countrySelected.countryName;
+    h3CountryName.textContent = 'Country Name: '+countrySelected.countryName;
 
     let ulList = document.createElement('ul');
 
@@ -67,19 +67,19 @@ const deployCountryInfo = function () {
 
     let ilListLanguage = document.createElement('il');
     ilListLanguage.className = 'details-item';
-    ilListLanguage.textContent = countrySelected.languages;
+    ilListLanguage.textContent = 'Languages : '+ countrySelected.languages;
 
     let ilListCapital = document.createElement('il');
     ilListCapital.className = 'details-item';
-    ilListCapital.textContent = countrySelected.capital;
+    ilListCapital.textContent ='Capital City : '+ countrySelected.capital;
 
     let ilListRegion = document.createElement('il');
     ilListRegion.className = 'details-item';
-    ilListRegion.textContent = countrySelected.region;
+    ilListRegion.textContent = 'Region : '+ countrySelected.region;
 
     let ilListPopulation = document.createElement('il');
     ilListPopulation.className = 'details-item';
-    ilListPopulation.textContent = countrySelected.population;
+    ilListPopulation.textContent ='Population : '+ countrySelected.population;
 
 
 
@@ -126,7 +126,7 @@ const deployCountryInfo = function () {
 
     let aButton = document.createElement('a');
     aButton.id = 'btn-back-countries';
-    aButton.href = "#";
+    aButton.href = '../countries';
     aButton.textContent = 'Back To Countries';
 
     buttonBack.appendChild(aButton);
