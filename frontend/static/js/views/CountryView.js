@@ -103,16 +103,29 @@ const deployCountryInfo = function () {
     let ulBorderCountry = document.createElement('ul');
     ulBorderCountry.className = 'borders-list';
 
-    let iLBorderCountry = document.createElement('il');
-    iLBorderCountry.className = 'orders-item';
+    //for each to iterate border countries.
 
 
+    countrySelected.borders.forEach(function (border) {
+
+        let iLBorderCountry = document.createElement('il');
+        iLBorderCountry.className = 'orders-item';
+        let aCountryBorder= document.createElement('a');
+
+        aCountryBorder.textContent=border;
+        aCountryBorder.href=border;
 
 
+        iLBorderCountry.appendChild(aCountryBorder);
 
-    ulBorderCountry.appendChild(iLBorderCountry);
+
+        ulBorderCountry.appendChild(iLBorderCountry);
+    });
+
+
 
     divBorders.appendChild(h3Borders);
+    divBorders.appendChild(ulBorderCountry);
 
 
 
