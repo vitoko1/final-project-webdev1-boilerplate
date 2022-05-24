@@ -109,7 +109,7 @@ const deployCountryInfo = function () {
     countrySelected.borders.forEach(function (border) {
 
         let iLBorderCountry = document.createElement('il');
-        iLBorderCountry.className = 'orders-item';
+        iLBorderCountry.className = 'borders-item';
         let aCountryBorder= document.createElement('a');
 
         aCountryBorder.textContent=border;

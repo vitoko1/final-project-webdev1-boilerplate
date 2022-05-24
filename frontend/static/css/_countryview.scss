@@ -1,0 +1,39 @@
+%flex-format{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flag{
+    @extend %flex-format;
+    margin: auto;
+    padding: 5%;
+}
+
+.countries-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .details{
+        @extend %flex-format;
+        .details-list{
+            @extend %flex-format;
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+    .borders{
+        @extend %flex-format;
+        .borders-list{
+            @extend %flex-format;
+            text-decoration: none;
+            list-style: none;
+        }
+    }
+}
+
+.countries-btn{
+    @extend %flex-format;
+}
