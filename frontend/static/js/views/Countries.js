@@ -212,6 +212,7 @@ const filterFunction = function (filterBy, input) {
 const createFlags = function (countriesArray) { //(countriesArray)
 
     let blancDiv = document.createElement('div');
+    blancDiv.className = 'flags-div';
 
     //countriesArray.forEach(function (country) {
     countriesArray.forEach(function (country) {
